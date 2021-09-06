@@ -9,10 +9,11 @@
 <body>
     <h1>Hello, Welcome</h1>
     <h2>Here are your schedules</h2>
-    {%for schedule in schedules%}
-        <p>Prescription Drug: {{schedule.medicine_name}}</p>
-        <p>Weekdays: {{schedule.weeks}}</p>
+    
+        <p>
+        {{user.schedules.medicine_name}}
+        </p>
         
-    {% endfor %}
+    
 </body>
 </html>
