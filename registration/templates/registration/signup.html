@@ -1,0 +1,44 @@
+{%load crispy_forms_tags%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+</head>
+<body>
+    <div id="messages">
+        {% if messages %}
+            {% for message in messages%}
+                <p>
+                    {{ message }}
+                </p>
+            {% endfor %}
+        {% endif %}
+           
+    </div>
+    <div id = "signup-form">
+        <form method = "POST">
+            {% csrf_token %}
+
+            <fieldset id = "form-group">
+                <legend>
+                    Join Us Today
+                </legend>
+            
+
+            </fieldset>
+            {{ form|crispy }}
+            <div id = "submitbutton">
+                <button>Sign Up</button>
+            </div>
+
+        </form>
+        <div>
+            <p>Already Have An Account?</p><a href="#">Login</a>
+        </div>
+    </div>
+</body>
+</html>
